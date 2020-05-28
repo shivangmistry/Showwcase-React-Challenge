@@ -10,11 +10,11 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <div className="App">
-        <Header />
         <AppRouter />
-        <Footer />
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
