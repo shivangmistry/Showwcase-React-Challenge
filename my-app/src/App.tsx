@@ -1,4 +1,8 @@
 import React from 'react';
+
+import { Provider } from 'react-redux';
+import store from './redux/store'
+
 import { BrowserRouter } from 'react-router-dom';
 
 import Header from './components/Header/Header';
@@ -9,13 +13,15 @@ import './App.css';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Header />
-      <div className="App">
-        <AppRouter />
-      </div>
-      <Footer />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <div className="App">
+          <AppRouter />
+        </div>
+        <Footer />
+      </BrowserRouter>
+    </Provider>
   );
 }
 

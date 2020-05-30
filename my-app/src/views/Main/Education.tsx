@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Header from '../../components/Education/Header';
 import Body from '../../components/Education/Body';
 
-const Education: React.FC = (props: any) => {
-
-    const [username] = useState<string>(props.match.params);
-    console.log(username);
+const Education: React.FC = () => {
 
     return (
         <section>
-            <Header {...username} />
+            <Header />
             <Body />
         </section>
     )

@@ -6,6 +6,7 @@ import CenterPanel from './CenterPanel'
 import './css/body.css'
 
 const Body: React.FC = () => {
+
     return (
         <div className='educationBody'>
             <SidePanel />

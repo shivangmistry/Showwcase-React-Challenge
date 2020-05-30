@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 
+import { useDispatch } from 'react-redux'
+
 import { userEducation } from '../../config/user'
+
+import { setUser } from '../../redux/action/actions'
 
 import './css/home.css'
 
@@ -8,9 +12,11 @@ const Home: React.FC = (props: any) => {
 
     const [username, setUsername] = useState<string>('');
 
+    const dispatch = useDispatch();
+
     function submitHandler(e: any): void{
-        // store username in redux store
         e.preventDefault();
+        dispatch(setUser(username));
         props.history.push(userEducation(username));
     }
 

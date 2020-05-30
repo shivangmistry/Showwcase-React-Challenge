@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react'
 
+import { useSelector } from 'react-redux'
+
 import Modal from 'react-modal'
 import { serachUniversities } from '../../config/api'
 import axios from 'axios'
 
 import './css/header.css'
+
+interface stateObject {
+    username: string
+}
 
 interface University {
     name: string,
@@ -37,9 +43,9 @@ const customStyle = {
 
 Modal.setAppElement('body');
 
-const Header = (props: any) => {
+const Header: React.FC = () => {
 
-    const [username] = useState(props.username);
+    const username: string = useSelector((state: stateObject): string => {return state.username});
     
     const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
