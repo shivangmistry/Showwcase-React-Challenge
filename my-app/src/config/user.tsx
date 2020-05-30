@@ -1,3 +1,3 @@
-export const userEducation = function(username: string): string {
+export const userEducation = (username: string): string => {
     return '/user/' + username + '/education';
 }

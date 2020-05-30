@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 
 import { userEducation } from '../../config/user'
 
-import './home.css'
+import './css/home.css'
 
 const Home: React.FC = (props: any) => {
 
     const [username, setUsername] = useState<string>('');
 
     function submitHandler(e: any): void{
+        // store username in redux store
         e.preventDefault();
         props.history.push(userEducation(username));
     }

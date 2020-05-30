@@ -1,0 +1,47 @@
+.educationHeader {
+    margin: 0;
+    padding: 15px;
+}
+
+.educationHeader h1 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.educationModalTitle {
+    display: inline;
+    padding: 0 10px;
+}
+
+.addEducationForm {
+    font-weight: 600;
+}
+
+.addEducationForm span {
+    color: red;
+}
+
+#instituteList {
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    max-width: 150px;
+    background-color: white;
+    border: 1px solid black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    top: 118px;
+    z-index: 5;
+}
+
+#instituteList li {
+    list-style-type: none;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+#instituteList li:hover {
+    cursor: pointer;
+    background-color: rgba(146, 146, 146, 0.3);
+}

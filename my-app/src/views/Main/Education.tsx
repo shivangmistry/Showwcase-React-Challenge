@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-export class Education extends Component {
-    render() {
-        return (
-            <div>
-                <h1>This is main page</h1>
-            </div>
-        )
-    }
+import Header from '../../components/Education/Header';
+import Body from '../../components/Education/Body';
+
+const Education: React.FC = (props: any) => {
+
+    const [username] = useState<string>(props.match.params);
+    console.log(username);
+
+    return (
+        <section>
+            <Header {...username} />
+            <Body />
+        </section>
+    )
 }
 
 export default Education
