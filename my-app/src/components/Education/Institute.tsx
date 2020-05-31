@@ -5,7 +5,7 @@ import './css/institute.css'
 const Institute: React.FC = (props: any) => {
 
     return (
-        <div className='instituteDiv'>
+        <div className='instituteDiv' id={props.name}>
             <strong>{props.degree}, {props.field} @ {props.name}</strong>
             <br />
             

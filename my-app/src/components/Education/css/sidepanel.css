@@ -1,18 +1,25 @@
 .asideDiv {
     width: 20%;
     background-color: hotpink;
+    text-align: left;
 }
 
 .asideDiv ul {
     margin: 0;
-    padding: 0 10px;
+    padding: 0;
     list-style-type: none;
 }
 
 .asideDiv li {
-    margin-bottom: 10px;
+    padding: 0 10px 10px 10px;
 }
 
-.asideDiv li:first-child {
-    font-weight: bold;
+.asideDiv a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.4s;
+}
+
+.asideDiv a:hover {
+    color: rgb(172, 171, 171);
 }

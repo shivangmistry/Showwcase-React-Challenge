@@ -22,7 +22,9 @@ const SidePanel: React.FC = () => {
         <aside className='asideDiv'>
             <ul>
                 {institutes.map((i, index) => {
-                    return <li key={index}>{i.name}</li>
+                    return <li key={index} className='bookmark'>
+                        <a href={`#${i.name}`} >{i.name}</a>
+                        </li>
                 })}
             </ul>
         </aside>
