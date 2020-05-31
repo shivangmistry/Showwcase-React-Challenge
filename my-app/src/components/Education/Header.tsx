@@ -17,7 +17,7 @@ interface University {
     country: string,
 }
 
-interface EducationInstitute {
+export interface EducationInstitute {
     name: string,
     degree: string,
     field: string,
@@ -120,17 +120,32 @@ const Header: React.FC = () => {
         closeModal();
     }
 
+    // const addDefaultEducation = (): void => {
+    //     dispatch(addEducation(username, { 
+    //         name: 'San Jose State University',
+    //         degree: 'Master',
+    //         field: 'Software Engineering',
+    //         startYear: 2019,
+    //         endYear: 2020,
+    //         grade: 'A',
+    //         description: 'Speciliazed in Enterprise Software Technologies. ' + 
+    //             'Major coursework includes Enterprise Distributed Systems, Cloud Technologies, Human-Computer Interaction. ' + 
+    //             'Projects include reliable, scalable, full stack application developed using the MERN stack.'
+    //      }));
+    // }
+
     return (
         <div className='educationHeader'>
             <h1>Welcome to {username}'s education page.</h1>
             <button onClick={openModal}>Add new education</button>
+            {/* <button onClick={addDefaultEducation}>Add default education</button> */}
             <Modal 
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 style={customStyle} >
                 
                 <h2 className='educationModalTitle'>Enter Institute Details</h2>
-                {/* <button onClick={closeModal}>X</button> */}
+
                 <hr />
                 <br />
                 <form className='addEducationForm' onSubmit={submitHandler}>

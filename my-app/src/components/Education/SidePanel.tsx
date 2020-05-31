@@ -1,11 +1,30 @@
 import React from 'react'
 
+
+import { useSelector } from 'react-redux';
+
+import { stateObject } from '../../views/Main/Education';
+import { EducationInstitute } from './Header'
+
 import './css/sidepanel.css'
 
-function SidePanel() {
+const SidePanel: React.FC = () => {
+
+    const username: string = useSelector((state: stateObject): string => { return state.username });
+
+    const institutes = useSelector((state: any): Array<EducationInstitute> => {
+        if (username in state)
+            return state[username];
+        return [];
+    });
+
     return (
         <aside className='asideDiv'>
-            This is side panel
+            <ul>
+                {institutes.map((i, index) => {
+                    return <li key={index}>{i.name}</li>
+                })}
+            </ul>
         </aside>
     )
 }

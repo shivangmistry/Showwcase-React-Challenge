@@ -23,8 +23,17 @@ export const reducer = (state: any = initialState, action: any): any => {
                 }
             }
         case ADD_EDUCATION:
-            state[action.payload.username].push(action.payload.institute);
-            return { ...state };
+            // return { 
+            //     ...state,
+            //     [action.payload.username]: [...state[action.payload.username], action.payload.institute]
+            // };
+            return {
+                ...state,
+                [action.payload.username]: [...state[action.payload.username], action.payload.institute].sort(function(a, b){
+                    if(a.startYear>=b.endYear && a.endYear>=b.endYear) return -1
+                    return 1
+                })
+            }
         default:
             return state;
     }

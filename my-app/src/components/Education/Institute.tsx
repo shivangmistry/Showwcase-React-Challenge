@@ -1,9 +1,23 @@
 import React from 'react'
 
+import './css/institute.css'
+
 const Institute: React.FC = (props: any) => {
+
     return (
-        <div>
-            {props.degree}
+        <div className='instituteDiv'>
+            <strong>{props.degree}, {props.field} @ {props.name}</strong>
+            <br />
+            
+            {props.startYear} - {props.endYear}
+            <br />
+            
+            {(props.grade) ? 
+            <div>
+                Grade: {props.grade}
+            </div>:
+            null}
+            {props.description}
         </div>
     )
 }

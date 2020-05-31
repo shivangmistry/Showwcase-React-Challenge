@@ -11,7 +11,6 @@ const Body: React.FC = () => {
         <div className='educationBody'>
             <SidePanel />
             <CenterPanel />
-            <SidePanel />
         </div>
     )
 }

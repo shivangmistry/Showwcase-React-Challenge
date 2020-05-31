@@ -14,6 +14,7 @@ const Education: React.FC = (props: any) => {
     const username: string = useSelector((state: stateObject): string => { return state.username });
 
     if(username===""){
+        // redirect to home if username is empty in the store
         props.history.push('/home');
     }
 

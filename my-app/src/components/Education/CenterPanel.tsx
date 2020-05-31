@@ -1,34 +1,33 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import { useSelector } from 'react-redux';
 
 import { stateObject } from '../../views/Main/Education';
+import { EducationInstitute } from './Header'
+
+import Institute from './Institute';
 
 import './css/centerpanel.css'
 
-function CenterPanel() {
+const CenterPanel: React.FC = () => {
 
     const username: string = useSelector((state: stateObject): string => { return state.username });
 
-    const institutes = useSelector((state: any): Array<Object> => {
-        if (username in state){
-            console.log(state[username]);
+    const institutes = useSelector((state: any): Array<EducationInstitute> => {
+        if (username in state)
             return state[username];
-        }
         return [];
     });
 
     return (
         <section className='centerSection'>
-            This is center panel for {username}<br />
             <div>
-                {institutes.map((i: any, index: number) => {
-                    return <div key={index}>
-                        {i.name}
-                    </div>
+                {institutes.map((i: EducationInstitute, index: number) => {
+                    // return <div>{i.name}</div>
+                    return <Institute key={index} {...i} />
                 })}
             </div>
-            
+
         </section>
     )
 }
