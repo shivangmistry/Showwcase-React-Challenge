@@ -1,4 +1,4 @@
-import { GET_USER, SET_USER } from '../actionType/actionTypes'
+import { SET_USER, ADD_EDUCATION } from '../actionType/actionTypes'
 
 export const setUser = (username: string): Object => {
     return {
@@ -9,8 +9,12 @@ export const setUser = (username: string): Object => {
     }
 }
 
-export const getUser = (): Object => {
+export const addEducation = (username: string, institute: any): Object => {
     return {
-        type: GET_USER
+        type: ADD_EDUCATION,
+        payload: {
+            username: username,
+            institute: institute
+        }
     }
 }

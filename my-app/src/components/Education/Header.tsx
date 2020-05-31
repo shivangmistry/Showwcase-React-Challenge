@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import Modal from 'react-modal'
-import { serachUniversities } from '../../config/api'
 import axios from 'axios'
+import { serachUniversities } from '../../config/api'
+
+import { addEducation } from '../../redux/action/actions'
+
+import { stateObject } from '../../views/Main/Education';
 
 import './css/header.css'
-
-interface stateObject {
-    username: string
-}
 
 interface University {
     name: string,
@@ -45,7 +45,8 @@ Modal.setAppElement('body');
 
 const Header: React.FC = () => {
 
-    const username: string = useSelector((state: stateObject): string => {return state.username});
+    const username: string = useSelector((state: stateObject): string => { return state.username });
+    const dispatch = useDispatch();
     
     const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
@@ -115,7 +116,7 @@ const Header: React.FC = () => {
 
     const submitHandler = (e: any): void => {
         e.preventDefault();
-        console.log(newEducation);
+        dispatch(addEducation(username, { ...newEducation, name: instituteName }));
         closeModal();
     }
 

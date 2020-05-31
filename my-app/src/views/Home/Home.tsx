@@ -16,6 +16,7 @@ const Home: React.FC = (props: any) => {
 
     function submitHandler(e: any): void{
         e.preventDefault();
+        
         dispatch(setUser(username));
         props.history.push(userEducation(username));
     }

@@ -1,30 +1,33 @@
-import { GET_USER, SET_USER } from '../actionType/actionTypes'
+import { SET_USER, ADD_EDUCATION } from '../actionType/actionTypes'
 
 const initialState: any = {
-    username: ''
+    username: '',
 }
 
-const userReducer = (state: any = initialState, action: any): any => {
+export const reducer = (state: any = initialState, action: any): any => {
     switch(action.type){
-        case GET_USER:
-            return {
-                ...state
-            }
         case SET_USER:
-            const username = action.payload.username;
-            console.log('Checking for user: ', action.payload.username);
-            if(state.username) {
-                console.log('User exists');
+            const user = action.payload.username;
+            if(user in state) {
+                // user exists
+                return {
+                    ...state,
+                    username: user
+                }
             } else {
-                console.log('User does not exists');
+                // new user, initialize empty array for educations
+                state[user] = []
+                return {
+                    ...state,
+                    username: user,
+                }
             }
-            return {
-                ...state,
-                username: username
-            }
+        case ADD_EDUCATION:
+            state[action.payload.username].push(action.payload.institute);
+            return { ...state };
         default:
             return state;
     }
 }
 
-export default userReducer
+export default reducer;
