@@ -1,5 +1,7 @@
 # Showwcase Developer Challenge
 
+**My Submission:** [http://showwcase-demo.herokuapp.com/home](http://showwcase-demo.herokuapp.com/home)
+
 ## General idea
 
 We hope to evaluate your programming skills in a project that has a very similar stack to ours, a preview of what you will be working with at Showwcase. 
