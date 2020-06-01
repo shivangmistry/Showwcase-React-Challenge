@@ -13,25 +13,42 @@
     padding: 0 10px;
 }
 
-.addEducationForm {
+#addEducationForm {
     font-weight: 600;
 }
 
-.addEducationForm span {
+#addEducationForm span {
     color: red;
+}
+
+#addEducationForm input {
+    min-width: 180px;
+}
+
+#addEducationForm textarea {
+    min-width: 180px;
+    min-height: 100px;
+}
+
+.addEducationTable {
+    padding: 10px;
+}
+
+.addEducationTable td {
+    vertical-align: top;
 }
 
 #instituteList {
     margin: 0;
     padding: 0;
     max-height: 200px;
-    max-width: 150px;
+    max-width: 185px;
     background-color: white;
     border: 1px solid black;
     overflow-y: scroll;
     overflow-x: hidden;
     position: absolute;
-    top: 118px;
+    top: 94px;
     z-index: 5;
 }
 

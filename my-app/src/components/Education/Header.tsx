@@ -120,25 +120,11 @@ const Header: React.FC = () => {
         closeModal();
     }
 
-    // const addDefaultEducation = (): void => {
-    //     dispatch(addEducation(username, { 
-    //         name: 'San Jose State University',
-    //         degree: 'Master',
-    //         field: 'Software Engineering',
-    //         startYear: 2019,
-    //         endYear: 2020,
-    //         grade: 'A',
-    //         description: 'Speciliazed in Enterprise Software Technologies. ' + 
-    //             'Major coursework includes Enterprise Distributed Systems, Cloud Technologies, Human-Computer Interaction. ' + 
-    //             'Projects include reliable, scalable, full stack application developed using the MERN stack.'
-    //      }));
-    // }
-
     return (
         <div className='educationHeader'>
             <h1>Welcome to {username}'s education page.</h1>
             <button onClick={openModal}>Add new education</button>
-            {/* <button onClick={addDefaultEducation}>Add default education</button> */}
+            
             <Modal 
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
@@ -146,10 +132,9 @@ const Header: React.FC = () => {
                 
                 <h2 className='educationModalTitle'>Enter Institute Details</h2>
 
-                <hr />
                 <br />
-                <form className='addEducationForm' onSubmit={submitHandler}>
-                    <table>
+                <form id='addEducationForm' onSubmit={submitHandler}>
+                    <table className='addEducationTable'>
                         <tbody>
                             <tr>
                                 <td>Name <span>*</span></td>
@@ -215,8 +200,8 @@ const Header: React.FC = () => {
                             <tr>
                                 <td></td>
                                 <td>
-                                    <input type='submit' value='Add' />
-                                    <button onClick={closeModal}>X</button>
+                                    <button type='submit'>Add</button>&nbsp;
+                                    <button onClick={closeModal}>Cancel</button>
                                 </td>
                             </tr>
                         </tbody>

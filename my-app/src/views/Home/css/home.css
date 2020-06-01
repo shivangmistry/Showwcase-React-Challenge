@@ -1,6 +1,6 @@
 .mainDiv {
-    background-color: rgba(223, 223, 223, 0.3);
-    width: 60%;
+    background-color: white;
+    width: fit-content;
     margin: 50px auto;
     padding: 50px;
     border-radius: 10px;
@@ -8,10 +8,13 @@
 }
 
 .usernameForm input[type='text'] {
-    width: 49.1%;
+    width: 48.5%;
 }
 
 .usernameForm input[type='submit'] {
+    font-family: 'Poppins', sans-serif;
     width: 50%;
     margin-top: 10px;
+    background-color: #1d3557;
+    color: white;
 }

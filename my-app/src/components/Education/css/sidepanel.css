@@ -1,7 +1,12 @@
 .asideDiv {
     width: 20%;
-    background-color: hotpink;
+    height: 100%;
+    /* background-color: burlywood; */
     text-align: left;
+    border-right: 1px solid black;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: sticky;
 }
 
 .asideDiv ul {
@@ -11,15 +16,16 @@
 }
 
 .asideDiv li {
-    padding: 0 10px 10px 10px;
+    padding: 15px 10px;
+    transition: 0.3s;
+}
+
+.asideDiv li:hover {
+    cursor: pointer;
+    background-color: white;
 }
 
 .asideDiv a {
     color: black;
     text-decoration: none;
-    transition: color 0.4s;
-}
-
-.asideDiv a:hover {
-    color: rgb(172, 171, 171);
 }
